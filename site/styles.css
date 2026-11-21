@@ -107,7 +107,8 @@ h2 {
 /* Roadmap */
 .roadmap { margin-top: clamp(3rem, 7vw, 5rem); }
 
-.roadmap-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+.roadmap-head { display: flex; align-items: baseline; justify-content: space-between; gap: 0.25rem 1rem; flex-wrap: wrap; margin-bottom: 0.75rem; }
+.roadmap-head h2 { margin-bottom: 0; }
 
 .progress {
   margin: 0;
