@@ -3,59 +3,75 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nahsam Ahammed: AI/ML Engineer</title>
-  <meta name="description" content="Projects in applied AI and ML engineering by Nahsam Ahammed.">
+  <title>Nahsam Ahammed: AI and ML engineer</title>
+  <meta name="description" content="Nahsam Ahammed's 35-project roadmap in applied AI and ML engineering, across developer tools, security and hardware.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
   <link rel="stylesheet" href="styles.css">
+  <script src="projects.js" defer></script>
+  <script src="app.js" defer></script>
 </head>
 <body>
-  <header class="wrap">
-    <h1>Nahsam Ahammed</h1>
-    <p class="tagline">Applied AI and ML engineering</p>
-    <nav aria-label="Profile links">
-      <a href="https://github.com/nahsamahammed106-gif">GitHub</a>
-      <!-- TODO: add LinkedIn / email when you want them public -->
-    </nav>
+  <header class="wrap intro">
+    <h1 class="name">Nahsam Ahammed</h1>
+    <div class="intro-side">
+      <!-- TODO: make this line your own -->
+      <p class="pitch">I build AI products and the engineering that keeps them honest.</p>
+      <nav class="links" aria-label="Profile links">
+        <a href="https://github.com/nahsamahammed106-gif">GitHub</a>
+        <!-- TODO: add LinkedIn / email when you want them public -->
+      </nav>
+    </div>
   </header>
 
   <main class="wrap">
-    <section id="about" aria-labelledby="about-heading">
+    <section class="roadmap" aria-labelledby="roadmap-heading">
+      <div class="roadmap-head">
+        <h2 id="roadmap-heading">The roadmap</h2>
+        <p id="progress" class="progress">1 of 35 shipped</p>
+      </div>
+      <p class="roadmap-intro">
+        35 projects in four stages. Each square is one project, colored by track, and it fills in when the project ships.
+        Select a square to see what it is.
+      </p>
+
+      <div class="board">
+        <div id="grid" class="grid"></div>
+        <aside id="detail" class="detail" aria-live="polite"></aside>
+      </div>
+
+      <ul class="legend" aria-label="Tracks">
+        <li data-track="dev">Developer tools</li>
+        <li data-track="sec">Security</li>
+        <li data-track="hw">Hardware</li>
+        <li data-track="cross">Cross-cutting</li>
+        <li class="legend-flagship">Flagship</li>
+      </ul>
+
+      <noscript>
+        <p>The interactive grid needs JavaScript. Every project is on
+          <a href="https://github.com/nahsamahammed106-gif">GitHub</a>.</p>
+      </noscript>
+    </section>
+
+    <section class="shipped" aria-labelledby="shipped-heading">
+      <h2 id="shipped-heading">Shipped</h2>
+      <ol id="shipped-list" class="shipped-list"></ol>
+    </section>
+
+    <section class="about" aria-labelledby="about-heading">
       <h2 id="about-heading">About</h2>
       <!-- TODO: rewrite this in your own words (2–3 sentences). -->
       <p>
-        I build AI products and the engineering around them: evals, deployment, and monitoring.
-        This site tracks a 35-project roadmap across developer tools, cybersecurity and hardware.
+        I'm working toward a hybrid role: applied AI first, ML engineering second. Every project here
+        has a public repo with its eval results, an architecture note, and a section on what broke and why.
       </p>
-    </section>
-
-    <section id="projects" aria-labelledby="projects-heading">
-      <h2 id="projects-heading">Projects</h2>
-      <ol class="projects">
-        <li class="project">
-          <span class="num">01</span>
-          <div>
-            <h3><a href="https://github.com/nahsamahammed106-gif/portfolio-site">Portfolio site and project template</a></h3>
-            <p>This site, deployed by GitHub Actions on every push, plus a uv + pytest template every later project starts from.</p>
-            <p class="tags">HTML · CSS · GitHub Actions · GitHub Pages</p>
-          </div>
-        </li>
-
-        <!--
-          Copy this block for each new project:
-        <li class="project">
-          <span class="num">02</span>
-          <div>
-            <h3><a href="REPO_URL">Project name</a></h3>
-            <p>One sentence: the problem and what you built.</p>
-            <p class="tags">Stack · Stack · Stack</p>
-          </div>
-        </li>
-        -->
-      </ol>
     </section>
   </main>
 
-  <footer class="wrap">
-    <p>Built with plain HTML and CSS. Deployed with GitHub Actions.</p>
+  <footer class="wrap footer">
+    <p>Plain HTML, CSS and a little JavaScript. Deployed by GitHub Actions on every push.</p>
   </footer>
 </body>
 </html>

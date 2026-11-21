@@ -1,0 +1,58 @@
+// The whole roadmap. To ship a project: set shipped: true, add repo and summary.
+// track: "dev" | "sec" | "hw" | "cross"
+window.ROADMAP = {
+  stages: [
+    { id: "beginner", name: "Beginner", weeks: "weeks 1–6" },
+    { id: "builder", name: "Builder", weeks: "weeks 7–17" },
+    { id: "advanced", name: "Advanced", weeks: "weeks 18–31" },
+    { id: "expert", name: "Expert", weeks: "weeks 32–46" },
+  ],
+  tracks: {
+    dev: "Developer tools",
+    sec: "Security",
+    hw: "Hardware",
+    cross: "Cross-cutting",
+  },
+  projects: [
+    { n: 1, stage: "beginner", track: "dev", title: "Portfolio site and project template", shipped: true,
+      repo: "https://github.com/nahsamahammed106-gif/portfolio-site",
+      summary: "This site, deployed by GitHub Actions on every push, plus a uv and pytest template that every later project starts from." },
+    { n: 2, stage: "beginner", track: "dev", title: "Commit message and PR description writer" },
+    { n: 3, stage: "beginner", track: "sec", title: "Phishing email explainer" },
+    { n: 4, stage: "beginner", track: "dev", title: "Docs Q&A, built by hand" },
+    { n: 5, stage: "beginner", track: "sec", title: "Repo secret-leak scanner" },
+    { n: 6, stage: "beginner", track: "hw", title: "Local model chat with quantization comparison" },
+    { n: 7, stage: "beginner", track: "sec", title: "Phishing URL classifier with classic ML" },
+
+    { n: 8, stage: "builder", track: "dev", title: "Fix-the-failing-test agent" },
+    { n: 9, stage: "builder", track: "dev", title: "Eval harness across three providers" },
+    { n: 10, stage: "builder", track: "dev", title: "LLM observability and tracing" },
+    { n: 11, stage: "builder", track: "sec", title: "CVE digest for your own dependencies" },
+    { n: 12, stage: "builder", track: "hw", title: "MCP server for serial devices and sensors" },
+    { n: 13, stage: "builder", track: "hw", title: "Component datasheet extractor" },
+    { n: 14, stage: "builder", track: "dev", title: "Codebase onboarding Q&A" },
+    { n: 15, stage: "builder", track: "sec", title: "Log triage CLI on a local model" },
+    { n: 16, stage: "builder", track: "sec", title: "Vulnerable LLM app and guardrail layer" },
+    { n: 17, stage: "builder", track: "hw", title: "Predictive maintenance on an ESP32" },
+    { n: 18, stage: "builder", track: "cross", title: "Cost-aware model router" },
+
+    { n: 19, stage: "advanced", track: "dev", title: "PR review agent", flagship: true },
+    { n: 20, stage: "advanced", track: "sec", title: "Small transformer trained from scratch on logs" },
+    { n: 21, stage: "advanced", track: "sec", title: "Fine-tuned vulnerable-code classifier" },
+    { n: 22, stage: "advanced", track: "dev", title: "Model serving under load" },
+    { n: 23, stage: "advanced", track: "cross", title: "Offline pre-commit security reviewer" },
+    { n: 24, stage: "advanced", track: "sec", title: "MCP server auditor" },
+    { n: 25, stage: "advanced", track: "hw", title: "Offline voice assistant on a Raspberry Pi" },
+    { n: 26, stage: "advanced", track: "sec", title: "Real-time voice agent for a home security check-up" },
+    { n: 27, stage: "advanced", track: "dev", title: "Dependency-upgrade agent" },
+    { n: 28, stage: "advanced", track: "sec", title: "Agent sandbox" },
+    { n: 29, stage: "advanced", track: "sec", title: "Multi-agent incident investigator" },
+
+    { n: 30, stage: "expert", track: "dev", title: "Open-source issue recommender" },
+    { n: 31, stage: "expert", track: "sec", title: "Open-source LLM app security scanner", flagship: true },
+    { n: 32, stage: "expert", track: "hw", title: "Small-model leaderboard across Mac and Pi" },
+    { n: 33, stage: "expert", track: "hw", title: "Offline camera detector", flagship: true },
+    { n: 34, stage: "expert", track: "sec", title: "Network intrusion detection, full lifecycle", flagship: true },
+    { n: 35, stage: "expert", track: "cross", title: "Home network guardian" },
+  ],
+};
