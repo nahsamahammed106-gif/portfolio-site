@@ -323,3 +323,97 @@ h2 {
 .not-found { padding-top: clamp(3rem, 8vw, 6.5rem); }
 .not-found p { max-width: 50ch; }
 .not-found a { font-family: var(--font-display); font-weight: 600; }
+
+/* What I work on: disciplines and domains, wired to the roadmap grid */
+.focus { margin-top: clamp(3rem, 7vw, 5rem); }
+.focus-intro { margin: 0 0 1.75rem; max-width: 62ch; color: var(--ink-soft); }
+
+.focus-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  gap: 1.5rem 2.5rem;
+  align-items: start;
+}
+
+.focus-group-title {
+  margin: 0 0 0.5rem;
+  font: 600 var(--step--1)/1.2 var(--font-display);
+  color: var(--ink-soft);
+}
+
+.focus-list { list-style: none; margin: 0; padding: 0; display: grid; }
+.focus-list-domains { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 1.5rem; }
+
+.focus-item {
+  --c: var(--ink);
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas: "name count" "text text";
+  gap: 0.3rem 1rem;
+  width: 100%;
+  height: 100%;
+  padding: 0.95rem 0.75rem 1.05rem 1.15rem;
+  border: 0;
+  border-top: 1px solid var(--rule);
+  border-radius: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 160ms var(--ease);
+}
+.focus-item[data-value="sec"] { --c: var(--sec); }
+.focus-item[data-value="dev"] { --c: var(--dev); }
+.focus-item[data-value="hw"] { --c: var(--hw); }
+.focus-item[data-value="cross"] { --c: var(--cross); }
+
+/* color bar: same color as that domain's squares; disciplines use ink */
+.focus-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1.05rem;
+  bottom: 1.05rem;
+  width: 4px;
+  border-radius: 2px;
+  background: var(--c);
+  transition: width 160ms var(--ease);
+}
+
+.focus-item:hover { background: color-mix(in srgb, var(--c) 6%, transparent); }
+.focus-item[aria-pressed="true"] { background: color-mix(in srgb, var(--c) 11%, var(--paper-raised)); }
+.focus-item[aria-pressed="true"]::before { width: 6px; }
+.focus-item[aria-pressed="true"] .focus-name { color: var(--c); }
+
+.focus-name { grid-area: name; font: 700 var(--step-1)/1.2 var(--font-display); letter-spacing: -0.01em; }
+.focus-count {
+  grid-area: count;
+  font: 800 var(--step-2)/1 var(--font-display);
+  font-variant-numeric: tabular-nums;
+  color: var(--c);
+  text-align: right;
+}
+.focus-unit { display: block; margin-top: 0.15rem; font: 500 0.75rem/1 var(--font-display); color: var(--ink-soft); }
+.focus-text { grid-area: text; font-size: 0.98rem; line-height: 1.5; color: var(--ink-soft); max-width: 46ch; }
+
+/* Roadmap filtering */
+.roadmap-status { display: flex; align-items: baseline; gap: 1rem; flex-wrap: wrap; }
+.filter-clear {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--ink);
+  font: 600 var(--step--1)/1 var(--font-display);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  cursor: pointer;
+}
+.cell { transition: transform 160ms var(--ease), background-color 160ms var(--ease), box-shadow 160ms var(--ease), opacity 200ms var(--ease); }
+.grid.is-filtered .cell:not(.is-match) { opacity: 0.2; }
+
+@media (max-width: 760px) {
+  .focus-grid { grid-template-columns: minmax(0, 1fr); }
+  .focus-list-domains { grid-template-columns: minmax(0, 1fr); }
+}

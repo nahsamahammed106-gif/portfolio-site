@@ -47,10 +47,28 @@
   </header>
 
   <main class="wrap">
+    <section class="focus" aria-labelledby="focus-heading">
+      <h2 id="focus-heading">What I work on</h2>
+      <p class="focus-intro">Two disciplines, applied across three domains. Select one to light up its projects in the roadmap.</p>
+      <div class="focus-grid">
+        <div class="focus-group">
+          <h3 class="focus-group-title">Disciplines</h3>
+          <ul id="focus-disciplines" class="focus-list"></ul>
+        </div>
+        <div class="focus-group">
+          <h3 class="focus-group-title">Domains</h3>
+          <ul id="focus-domains" class="focus-list focus-list-domains"></ul>
+        </div>
+      </div>
+    </section>
+
     <section class="roadmap" aria-labelledby="roadmap-heading">
       <div class="roadmap-head">
         <h2 id="roadmap-heading">The roadmap</h2>
-        <p id="progress" class="progress">1 of 35 shipped</p>
+        <div class="roadmap-status">
+          <p id="progress" class="progress" aria-live="polite">1 of 35 shipped</p>
+          <button type="button" id="filter-clear" class="filter-clear" hidden>Show all</button>
+        </div>
       </div>
       <p class="roadmap-intro" id="roadmap-hint">
         35 projects in four stages. Each square is one project, colored by track, and it fills in when the project ships.
@@ -64,9 +82,9 @@
 
       <ul class="legend" aria-label="Tracks">
         <li data-track="dev">Developer tools</li>
-        <li data-track="sec">Security</li>
-        <li data-track="hw">Hardware</li>
-        <li data-track="cross">Cross-cutting</li>
+        <li data-track="sec">Cybersecurity</li>
+        <li data-track="hw">Hardware and edge</li>
+        <li data-track="cross">Across domains</li>
         <li class="legend-flagship">Flagship</li>
       </ul>
 
