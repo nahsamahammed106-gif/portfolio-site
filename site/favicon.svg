@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <style>
+    .bg { fill: #f1f4f2; } .on { fill: #2c62d6; } .off { fill: none; stroke-width: 2.5; }
+    .s { stroke: #b4232f; } .h { stroke: #0e7a63; } .c { stroke: #6d4fd8; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #0f1a2e; } .on { fill: #6d9bff; }
+      .s { stroke: #ff6b74; } .h { stroke: #3fd0ad; } .c { stroke: #a993ff; }
+    }
+  </style>
+  <rect class="bg" width="32" height="32" rx="7"/>
+  <rect class="on" x="5" y="5" width="10" height="10" rx="2.5"/>
+  <rect class="off s" x="18.25" y="6.25" width="7.5" height="7.5" rx="2"/>
+  <rect class="off h" x="6.25" y="18.25" width="7.5" height="7.5" rx="2"/>
+  <rect class="off c" x="18.25" y="18.25" width="7.5" height="7.5" rx="2"/>
+</svg>

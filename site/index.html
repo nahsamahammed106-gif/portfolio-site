@@ -3,11 +3,32 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Only this site's own files may load. GitHub Pages can't send security headers, so the policy lives here. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Nahsam Ahammed: AI and ML engineer</title>
   <meta name="description" content="Nahsam Ahammed's 35-project roadmap in applied AI and ML engineering, across developer tools, security and hardware.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+  <link rel="canonical" href="https://nahsamahammed106-gif.github.io/portfolio-site/">
+
+  <!-- Link previews (LinkedIn, Slack, X, iMessage) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Nahsam Ahammed">
+  <meta property="og:title" content="Nahsam Ahammed: AI and ML engineer">
+  <meta property="og:description" content="A 35-project roadmap in applied AI and ML engineering, built in public.">
+  <meta property="og:url" content="https://nahsamahammed106-gif.github.io/portfolio-site/">
+  <meta property="og:image" content="https://nahsamahammed106-gif.github.io/portfolio-site/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Nahsam Ahammed's roadmap: a grid of 35 project squares colored by track.">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta name="theme-color" content="#f1f4f2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0f1a2e" media="(prefers-color-scheme: dark)">
+
+  <link rel="preload" href="fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
   <script src="projects.js" defer></script>
   <script src="app.js" defer></script>
@@ -31,14 +52,14 @@
         <h2 id="roadmap-heading">The roadmap</h2>
         <p id="progress" class="progress">1 of 35 shipped</p>
       </div>
-      <p class="roadmap-intro">
+      <p class="roadmap-intro" id="roadmap-hint">
         35 projects in four stages. Each square is one project, colored by track, and it fills in when the project ships.
-        Select a square to see what it is.
+        Select a square to see what it is, or use the arrow keys to move between them.
       </p>
 
       <div class="board">
-        <div id="grid" class="grid"></div>
-        <aside id="detail" class="detail" aria-live="polite"></aside>
+        <div id="grid" class="grid" role="group" aria-label="Roadmap projects" aria-describedby="roadmap-hint"></div>
+        <aside id="detail" class="detail" aria-label="Selected project"></aside>
       </div>
 
       <ul class="legend" aria-label="Tracks">

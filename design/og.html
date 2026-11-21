@@ -1,0 +1,55 @@
+<!doctype html>
+<!-- Source for site/og.png (1200x630 link-preview image). Regenerate: open at 1200x630 and screenshot. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face { font-family: "Bricolage Grotesque"; src: url("../site/fonts/bricolage-grotesque-latin.woff2") format("woff2"); font-weight: 400 800; }
+  @font-face { font-family: "Source Serif 4"; src: url("../site/fonts/source-serif-4-latin.woff2") format("woff2"); font-weight: 400 600; }
+  :root { --paper:#f1f4f2; --raised:#fff; --ink:#13213b; --soft:#4b5872; --dev:#2c62d6; --sec:#b4232f; --hw:#0e7a63; --cross:#6d4fd8; }
+  * { box-sizing: border-box; margin: 0; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    background: var(--paper);
+    background-image: linear-gradient(rgb(19 33 59 / .06) 1px, transparent 1px), linear-gradient(90deg, rgb(19 33 59 / .06) 1px, transparent 1px);
+    background-size: 24px 24px;
+    color: var(--ink);
+    display: grid; grid-template-columns: 1fr 520px; gap: 56px; align-items: center;
+    padding: 72px 72px 72px 80px;
+    font-family: "Bricolage Grotesque", sans-serif;
+  }
+  h1 { font-size: 112px; line-height: .9; font-weight: 800; letter-spacing: -.035em; }
+  p { margin-top: 28px; font: 400 32px/1.3 "Source Serif 4", serif; color: var(--soft); max-width: 15em; }
+  .count { margin-top: 36px; font-size: 26px; font-weight: 600; }
+  .rows { display: grid; gap: 14px; }
+  .row { display: grid; grid-template-columns: repeat(11, 1fr); gap: 8px; }
+  .c { --c: var(--dev); aspect-ratio: 1; border-radius: 7px; border: 2.5px solid color-mix(in srgb, var(--c) 45%, transparent); background: color-mix(in srgb, var(--c) 7%, var(--raised)); }
+  .c.sec { --c: var(--sec); } .c.hw { --c: var(--hw); } .c.cross { --c: var(--cross); }
+  .c.on { background: var(--c); border-color: var(--c); }
+</style>
+</head>
+<body>
+  <div>
+    <h1>Nahsam Ahammed</h1>
+    <p>A 35-project roadmap in applied AI and ML engineering.</p>
+    <div class="count" id="count"></div>
+  </div>
+  <div class="rows" id="rows"></div>
+  <script src="../site/projects.js"></script>
+  <script>
+    const { stages, projects } = window.ROADMAP;
+    const rows = document.getElementById("rows");
+    for (const s of stages) {
+      const row = document.createElement("div"); row.className = "row";
+      for (const p of projects.filter((x) => x.stage === s.id)) {
+        const c = document.createElement("div");
+        c.className = `c ${p.track}${p.shipped ? " on" : ""}`;
+        row.append(c);
+      }
+      rows.append(row);
+    }
+    document.getElementById("count").textContent =
+      `${projects.filter((p) => p.shipped).length} of ${projects.length} shipped`;
+  </script>
+</body>
+</html>
